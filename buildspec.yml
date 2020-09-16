@@ -47,32 +47,32 @@ phases:
             name: $_PROJECT_NAME
             namespace: teamc
             labels:
-              app: $_PROJECT_NAME
+              app: $IMAGE_REPO_NAME
           spec:
             ports:
               - port: 8080
                 targetPort: 8080
             selector:
-              app: $_PROJECT_NAME
+              app: $IMAGE_REPO_NAME
           EOF
       - |
           cat  <<EOF | kubectl apply -f -
           apiVersion: apps/v1
           kind: Deployment
           metadata:
-            name: $_PROJECT_NAME
+            name: $IMAGE_REPO_NAME
             namespace: teamc
             labels:
-              app: $_PROJECT_NAME
+              app: $IMAGE_REPO_NAME
           spec:
             replicas: 1
             selector:
               matchLabels:
-                app: $_PROJECT_NAME
+                app: $IMAGE_REPO_NAME
             template:
               metadata:
                 labels:
-                  app: $_PROJECT_NAME
+                  app: $IMAGE_REPO_NAME
               spec:
                 containers:
                   - name: $_PROJECT_NAME
@@ -124,7 +124,7 @@ phases:
             #    target:
             #      type: Utilization
             #      averageUtilization: 10
-         # EOF
+         # EOF###
 cache:
   paths:
     - '/root/.m2/**/*'
