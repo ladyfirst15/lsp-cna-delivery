@@ -3,7 +3,7 @@ version: 0.2
 env:
   variables:
     IMAGE_REPO_NAME: "delivery"
-    _PROJECT_NAME: "delivery"
+    _PROJECT_NAME: "admin14-delivery"
 
 phases:
   install:
